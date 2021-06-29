@@ -1,12 +1,7 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        found = False
-        for counterFirst in range(0,len(nums)):
-            counterSecond = counterFirst+1
-            while found == False or counterSecond<len(nums):
+        for counterFirst in range(len(nums)):
+            for counterSecond in range(1,len(nums)):
                 total = nums[counterFirst] + nums[counterSecond]
-                if total == target:
-                    found = True
+                if total == target and counterFirst!=counterSecond:
                     return(counterFirst,counterSecond)
-                else:
-                    counterSecond = counterSecond+1
